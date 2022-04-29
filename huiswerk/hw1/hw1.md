@@ -72,14 +72,14 @@ Hieronder volgt de opzet voor de functie:
 
 ```python
 def policy_eval(policy, env, discount_factor=0.9, theta=1e-5):
-		V = np.zeros(env.observation_space.n)
-		delta = np.inf
+	V = np.zeros(env.observation_space.n)
+	delta = np.inf
 
-		while delta > theta:
-				# SCHRIJF HIER JE CODE
-				pass
+	while delta > theta:
+		# SCHRIJF HIER JE CODE
+		pass
 
-		return np.array(V)
+	return np.array(V)
 ```
 
 Voer de functie uit voor het beleid die altijd gelijke kansen aan elke actie geeft.
@@ -93,29 +93,29 @@ Nu we Policy Evaluation hebben geimplementeerd, kunnen we Policy Iteration imple
 
 ```python
 def policy_improvement(env, discount_factor=0.9):
-		nS = env.observation_space.n
-		nA = env.action_space.n
-		policy = np.ones((nS, nA)) / nA
-		policy_stable = False
+	nS = env.observation_space.n
+	nA = env.action_space.n
+	policy = np.ones((nS, nA)) / nA
+	policy_stable = False
 
-		while not policy_stable:
-		    V = policy_eval(policy, env, discount_factor)
+	while not policy_stable:
+    V = policy_eval(policy, env, discount_factor)
 
-				policy_stable = True
+		policy_stable = True
 
-				for state in range(nS):
-						old_action = np.random.choice(nA, p=policy[state])
+		for state in range(nS):
+			old_action = np.random.choice(nA, p=policy[state])
 
-						# BESCHRIJF DE NIEUWE ACTIE
-						new_action = None
+			# BESCHRIJF DE NIEUWE ACTIE
+			new_action = None
 
-						policy[state] = 0
-						policy[state, new_action] = 1
+			policy[state] = 0
+			policy[state, new_action] = 1
 
-						if old_action != new_action:
-								policy_stable = False
+			if old_action != new_action:
+				policy_stable = False
 
-		return policy, V
+	return policy, V
 ```
 
 Update de bovenstaande code zodat het Policy Improvement algoritme werkt.
@@ -129,12 +129,12 @@ Een uitgebreide omschrijving van Value Iteration is te vinden in [Sutton & Barto
 
 ```python
 def value_iteration(env, theta=1e-5, discount_factor=1.0):
-		V = np.zeros(env.observation_space.n)
-		policy = np.ones((nS, nA)) / nA
+	V = np.zeros(env.observation_space.n)
+	policy = np.ones((nS, nA)) / nA
 
-		# SCHRIJF HIER JE CODE
+	# SCHRIJF HIER JE CODE
 
-		return policy, V
+	return policy, V
 ```
 
 Laat de resultaten van de geleerde waardefunctie en beleid weer zien.
