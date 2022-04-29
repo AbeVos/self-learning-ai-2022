@@ -99,7 +99,7 @@ def policy_improvement(env, discount_factor=0.9):
 	policy_stable = False
 
 	while not policy_stable:
-    V = policy_eval(policy, env, discount_factor)
+		V = policy_eval(policy, env, discount_factor)
 
 		policy_stable = True
 
