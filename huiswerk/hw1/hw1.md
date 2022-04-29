@@ -125,6 +125,7 @@ Toon de optimale waarde functie.
 ## Value Iteration (6 punten)
 
 Nu implementeren we Value Iteration.
+Een uitgebreide omschrijving van Value Iteration is te vinden in [Sutton & Barto](https://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf) op pagina 101 (figuur 4.5).
 
 ```python
 def value_iteration(env, theta=1e-5, discount_factor=1.0):
