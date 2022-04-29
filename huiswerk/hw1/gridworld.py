@@ -89,4 +89,4 @@ class Gridworld(Env):
             rows[y] = " " + " | ".join(row) + " \n"
 
         sep = "+".join(["---"] * MAX_X) + "\n"
-        return sep.join(rows)
+        print(sep.join(rows))
