@@ -76,6 +76,8 @@ while not done:
 Nu gaan we Monte Carlo Prediction implementeren.
 
 ```python
+from collections import defaultdict
+
 def mc_prediction(policy, env, num_episodes, discount_factor=1.0):
     # Keep track of how many times each state has been visited.
     # A defaultdict creates a default value (0) when we want to read a key
