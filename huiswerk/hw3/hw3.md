@@ -71,8 +71,11 @@ a * b  # Vector met product van corresponderende elementen
 a @ b  # Dot-product
 ```
 
-We gaan onze Q-functie implementeren door een lineaire voorspeller te maken voor elke aparte actie.
-Gebruik onderstaande opzet om de Q-functie te implementeren:
+Het dot-product combineert twee vectoren, in ons geval de staat en de parameters, en geeft een enkele waarde terug.
+Omdat onze kwaliteitsfunctie een Q-waarde voor elke actie moet voorspellen, moeten we voor elke actie een parameter vector bijhouden.
+Om de Q-waarde voor de gegeven staat en actie te berekenen, kunnen we voor elke actie een parameter vector opslaan.
+In de Q-functie vragen de de relevante parameters op uit de lijst `params` met de index van de gegeven actie.
+Vervolgens berekenen we de Q-waarde als het dot-product tussen `state` en de parameters.
 
 ```python
 def q_value(state, action, params):
@@ -89,6 +92,9 @@ params = np.zeros((2, 6))
 ```
 
 Oftewel, elke rij in de matrix is een vector met parameters.
+We kunnen ook de `@` operator gebruiken voor een matrix-vector vermenigvuldiging.
+Let op dat dit alleen mogelijk is als de matrix net zo veel kolommen heeft als de vector elementen heeft.
+Het resultaat is niet een enkele waarde, maar een vector met net zo veel elementen als de matrix rijen heeft.
 
 ### Activatiefunctie (2 punten)
 
@@ -247,7 +253,7 @@ De index van de actie met de hoogste waarde, is de gekozen actie.
 def policy(state, params):
 	# JOUW CODE HIER
 	# Vermenigvuldig `state` en `params`, let op dat de volgorde belangrijk is bij matrix-vermenigvuldiging.
-	# Vind de index van de actie met de hoogste score.
+	# Vind de index van de actie met de hoogste score (argmax_a Q(S, a)).
 	return 0
 ```
 
