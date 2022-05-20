@@ -232,7 +232,7 @@ Box2d is een 2d physics engine en kan worden geinstalleerd met pip:
 pip install gym[box2d]
 ```
 
-Waarschijnlijk moet je ook nog [swig.exe](https://www.swig.org/Doc1.3/Windows.html#Windows_installation) installeren.
+Waarschijnlijk moet je ook nog [swig.exe](https://www.swig.org/download.html) installeren.
 
 ### Parametrisch beleid (2 punten)
 
