@@ -233,6 +233,7 @@ pip install gym[box2d]
 ```
 
 Waarschijnlijk moet je ook nog [swig.exe](https://www.swig.org/download.html) installeren.
+Instructies voor de installatie zijn [hier](https://www.dev2qa.com/how-to-install-swig-on-macos-linux-and-windows/) te vinden.
 
 ### Parametrisch beleid (2 punten)
 
