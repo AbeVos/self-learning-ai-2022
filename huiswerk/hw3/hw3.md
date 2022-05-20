@@ -154,6 +154,31 @@ Hint: voor de update stap hebben we de afgeleide van de Q-functie met betrekking
 Voor een lineaire functie is die gelukkig erg makkelijk.
 Als we de lineaire functie `q(a, b) = a @ b` hebben, dan is de afgeleide met betrekking tot `a` simpelweg `b`.
 
+Hint: hieronder nog eens de pseudocode:
+
+```
+Maak een differentieerbare kwaliteitsfunctie q(s, a, w)
+Maak een functie voor de gradient van q(s, a, w): q'(s, a, w)
+Kies een learning rate: lr
+Initialiseer parameters w (bijvoorbeeld w=0)
+
+Voor elke episode
+	Observeer staat S en kies actie A (met bijv. epsilon greedy)
+
+	Voor elke stap in de episode:
+		Voer A uit, observeer R, S'
+
+		Als S' terminaal is:
+			w += lr * (R - q(S, A, w)) * q'(S, A, w)
+			Ga naar volgende episode
+
+		Kies actie A' a.d.h.v. S' en q(S', a, w)
+		w += lr * (R + discount * q(S', A', w) - q(S, A, w)) * q'(S, A, w)
+
+		S := S'
+		A := A'
+```
+
 ### Trainen (2 punten)
 
 We gaan nu het algoritme op de CartPole omgeving trainen.
@@ -265,6 +290,22 @@ def brs(env, num_iters, lr=0.2, v=0.2, N=4):
 ```
 
 Hint: je kan de 'noise' genereren met `np.random.randn(nA, nS)`.
+
+Hint: het algoritme in pseudocode:
+
+```
+Hyperparameters: lr, v, N
+Initialiseer parameters: w = [0, 0, ..., 0]
+
+Voor elke iteratie:
+	Genereer N noise vectors met standard normaal steekproeven: d1, d2, ..., dN
+
+	for elke n in 1..N:
+		G_n+ = beloning uit episode met beleid van: w + v * dn
+		G_n- = beloning uit episode met beleid van: w - v * dn
+
+	w += lr / N * sum((G_n+ - G_n-) * dn voor elke n in 1..N)
+```
 
 ### Trainen (3 punten)
 
