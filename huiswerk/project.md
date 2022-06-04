@@ -62,12 +62,14 @@ Gebruik een generatief model voor afbeeldingen van gezichten.
 Maak een applicatie waarin waarin een gebruiker met behulp van sliders een fotorealistisch gezicht kan maken.
 
 - [Eigenfaces tutorial](https://scipy-lectures.org/packages/scikit-learn/auto_examples/plot_eigenfaces.html)
+- [StyleGAN Jupyter Notebook](https://github.com/lernapparat/lernapparat)
 
 ### Texture upscaler
 
 Maak een tool die de resolutie van textures kan verhogen.
 
 - [Superresolutie in Pytorch](https://github.com/twtygqyy/pytorch-SRResNet)
+- [Superresolutie API](https://deepai.org/machine-learning-model/torch-srgan)
 
 ### Texture Style Transfer
 
